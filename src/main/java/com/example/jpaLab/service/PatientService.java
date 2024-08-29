@@ -44,7 +44,6 @@ public class PatientService {
     public Patient updatePatientInformation(Long patientNumber, String name, String surname, String address, String phoneNumber, String diagnosis) {
         Patient patient = patientRepository.findById(patientNumber)
                 .orElseThrow(() -> new IllegalArgumentException("Patient not found"));
-
         patient.setName(name);
         patient.setSurname(surname);
         patient.setAddress(address);
